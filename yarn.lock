@@ -801,7 +801,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.12.1", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.8.4":
   version "7.12.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.1.tgz#b4116a6b6711d010b2dad3b7b6e43bf1b9954740"
   integrity sha512-J5AIf3vPj3UwXaAzb5j1xM4WAQDX3EMgemF8rjCP3SoW09LfRKAXQKt6CoVYl230P6iWdRcBbnLDDdnqWxZSCA==
@@ -1648,12 +1648,11 @@ jsesc@~0.5.0:
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
   integrity sha1-597mbjXW/Bb3EP6R1c9p9w8IkR0=
 
-jsman@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/jsman/-/jsman-1.0.1.tgz#cc2fc8dc3917f8a990aebb30879cedd3cf6b0843"
-  integrity sha512-6Tx1d1CSfr2YKyvsC1baOfkTEwICk2LEYxDGgo69Rqhd2f3TjM+vw1O3fMSl8mVj0+4S3dl2fnm7gqKPdWdEEA==
+jsman@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/jsman/-/jsman-1.0.2.tgz#b58031b384f45e108e6929b3d1e29f9c53ab8747"
+  integrity sha512-9/8R0XEgiOllZ7psECUYWNGqWKcW+XPrSn16UQCvfK+OpGnHt72FRF4NtcfqJY6//hWG24C3ChxPS2yH08pz2g==
   dependencies:
-    "@babel/runtime" "^7.12.1"
     core-js "^3.6.5"
 
 json5@^2.1.2:
@@ -1663,14 +1662,13 @@ json5@^2.1.2:
   dependencies:
     minimist "^1.2.5"
 
-jsvn@0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/jsvn/-/jsvn-0.1.4.tgz#1df710dbc86a45c4af88a2314325544e35d67016"
-  integrity sha512-rcxnxxUeLRt6hJOGBm6f75ElSfC7hgl4qTIm3Rr5NjPrvppHvitRW6QXDwj7hiOX8wUNAjttcIP7fcqFNoSLyg==
+jsvn@*:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/jsvn/-/jsvn-0.1.5.tgz#7046996924f9c6b16b960265753e694e36204c63"
+  integrity sha512-4U39pHeI2I6wsRJfOuvCjzlwCUQCUU9kJlLpVwobLEp9vgXDzn6B8z3aJEcp+nyJL6DacNoyyom9r51uRQxj2A==
   dependencies:
-    "@babel/runtime" "^7.12.1"
     core-js "^3.6.5"
-    jsman "^1.0.1"
+    jsman "^1.0.2"
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"

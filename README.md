@@ -2,7 +2,7 @@
 
 JSVN (ES6) Template engine for React.
 
-#####UIBase.js
+####UIBase.js
 ```
 import $$ from 'react-jsvn';
 
@@ -21,7 +21,7 @@ const UIBase = new $$.View({
 export default UIBase;
 ```
 
-#####Button.js
+####Button.js
 ```
 import $$ from 'react-jsvn';
 import UIBase from './UIBase.js';
@@ -44,7 +44,7 @@ const Button = new $$.View(['<>button', UIBase], {
 export default Button;
 ```
 
-#####Input.js
+####Input.js
 ```
 import $$ from 'react-jsvn';
 import UIBase from './UIBase.js';
@@ -57,7 +57,7 @@ const Input = new $$.View(['/input', UIBase], { //Prefix '/' indicates a self-cl
 export default Input;
 ```
 
-#####ListComponent.js
+####ListComponent.js
 ```
 import $$ from 'react-jsvn';
 import { useMemo } from 'react';
@@ -86,11 +86,11 @@ const List = props => {
 			},
 
 			//Child node based on local style '.cell'
-			[$$`item-name `('.cell')]: {
+			[$$`item-name `('cell')]: {
 				[$$.text]: item=>item,
 			},
 
-			[$$`item-opts `('.cell')]: {
+			[$$`item-opts `('cell')]: {
 				width: '30px',
 
 				//Child node that extends Button view
@@ -110,7 +110,7 @@ const List = props => {
 export default List;
 ```
 
-#####main.js
+####main.js
 ```
 import $$ from 'react-jsvn';
 import React, { useMemo, useState } from 'react';
@@ -157,7 +157,7 @@ const RootComponent = () => {
 					display: 'table-cell',
 				},
 
-				[$$`item-name-cnt `('.cell')]: {
+				[$$`item-name-cnt `('cell')]: {
 					paddingLeft: '20px',
 
 					[$$`item-name `(Input)]: {
@@ -167,11 +167,11 @@ const RootComponent = () => {
 					},
 				},
 
-				[$$('.cell')]: {
+				[$$('cell')]: {
 					width: '20px',
 				},
 
-				[$$('.cell')]: {
+				[$$('cell')]: {
 					paddingRight: '20px',
 
 					//Include Button as view

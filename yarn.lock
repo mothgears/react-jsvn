@@ -1662,10 +1662,10 @@ json5@^2.1.2:
   dependencies:
     minimist "^1.2.5"
 
-jsvn@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/jsvn/-/jsvn-0.2.2.tgz#8b697651425a38b1512253327d2f18c3c66ae35f"
-  integrity sha512-+VZu8hqJNFkqUMr2bF0n8jF+bvxxQ3T/3Oyklfe+4fnfPazLG0gU7ClWYXhNmjC+K1x4VUhxRE2Cq/5nvVlCvA==
+jsvn@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/jsvn/-/jsvn-0.3.0.tgz#88b0ad24d67cda87137acfe7500f7fdd3a910331"
+  integrity sha512-SbsoxQgRCAuMXkjwFKcBuYf7o1UNfCW1ptxlpyWz9xuB/wO7qs/Ft1Wfm3Jo3H6vTo7Aud29qw0Uby1iaM2mNw==
   dependencies:
     core-js "^3.6.5"
     jsman "^1.1.1"

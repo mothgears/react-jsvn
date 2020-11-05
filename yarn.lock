@@ -1648,10 +1648,10 @@ jsesc@~0.5.0:
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
   integrity sha1-597mbjXW/Bb3EP6R1c9p9w8IkR0=
 
-jsman@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/jsman/-/jsman-1.1.1.tgz#7577fd292d9bc47c4b88c070e4dab34c22f69181"
-  integrity sha512-NkT5s0DSlDtT8WmTR9M+dvvz31PtkoZugQNHzGRTJO2Psa8Jyu2WINTLO2f8sHMgLGKN9vb0xprvZiodETuOmw==
+jsman@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/jsman/-/jsman-2.0.0.tgz#e935a656d204c05a10369f0cecee8b58e30ab45f"
+  integrity sha512-JDxO72ZAlb2hOoZyMTlAlTYofxtFz0tA89ntulImKKI+0tKTgYNq/jVrZVi9hQUB8VdKt4+ZF9k2Gkzqa90cag==
   dependencies:
     core-js "^3.6.5"
 
@@ -1662,13 +1662,13 @@ json5@^2.1.2:
   dependencies:
     minimist "^1.2.5"
 
-jsvn@^0.4.3:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/jsvn/-/jsvn-0.4.3.tgz#caf4be220cc8b0de916fe9f61971b1f0aed1b353"
-  integrity sha512-Hi1ZMGWGswl8ZEDgSsH+89OZZlt28Mmtn1XJeg4/JvYO8446eKManDTHrgcFxqVMPkY00GEAagM455QxirWGLg==
+jsvn@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/jsvn/-/jsvn-0.5.0.tgz#26f0cca6036301fd5b58fd80d1df086298d83236"
+  integrity sha512-RoUG8qMYJAOtJcJ7Bt7TlYek39tBvx4F7gLqDV3D1Ua7b4IKQky8mKtZInh9QobK2Tp9bI6vuWXdT2Lw8pVONQ==
   dependencies:
     core-js "^3.6.5"
-    jsman "^1.1.1"
+    jsman "^2.0.0"
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"

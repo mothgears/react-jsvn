@@ -1,6 +1,6 @@
 {
   "name": "react-jsvn",
-  "version": "0.17.5",
+  "version": "0.17.6",
   "description": "JSVN Template engine for React",
   "author": "Artem Varshavin",
   "license": "MIT",
@@ -26,8 +26,6 @@
     "cross-env": "^7.0.2"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "jsvn": "^0.5.0",
-    "react": "^17.0.1"
+    "core-js": "^3.6.5"
   }
 }

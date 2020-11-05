@@ -51,13 +51,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = exports.decorate = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react2 = _interopRequireDefault(require("react"));
 
 var _jsvn = _interopRequireDefault(require("jsvn"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -105,8 +103,18 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var decorate = function decorate($$) {
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var decorate = function decorate($$, react) {
   if ($$.View.decorator) throw new Error('react-jsvn/decorate : JSVN is already decorated.');
+
+  if (!react) {
+    if (_typeof(_react2.default) === 'object' && _react2.default) {
+      react = _react2.default;
+    } else {
+      throw new Error('react-jsvn/decorate : React library not found.');
+    }
+  }
 
   $$.View = /*#__PURE__*/function (_$$$View) {
     _inherits(_class, _$$$View);
@@ -122,6 +130,8 @@ var decorate = function decorate($$) {
     _createClass(_class, null, [{
       key: "render",
       value: function render(tag, classes, params, style, events, children) {
+        var _react;
+
         if (!children) children = [];
         events = Object.entries(events).reduce(function (arr, _ref) {
           var _ref2 = _slicedToArray(_ref, 2),
@@ -131,7 +141,7 @@ var decorate = function decorate($$) {
           arr['on' + k[0].toUpperCase() + k.slice(1)] = v;
           return arr;
         }, {});
-        return _react.default.createElement.apply(_react.default, [tag, _objectSpread(_objectSpread({
+        return (_react = react).createElement.apply(_react, [tag, _objectSpread(_objectSpread({
           className: classes.join(' '),
           style: style
         }, events), params)].concat(_toConsumableArray(children)));
@@ -158,6 +168,6 @@ var decorate = function decorate($$) {
 
 exports.decorate = decorate;
 
-var _default = decorate(_jsvn.default);
+var _default = decorate(_jsvn.default, _react2.default);
 
 exports.default = _default;

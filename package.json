@@ -1,18 +1,19 @@
 {
   "name": "react-jsvn",
-  "version": "0.17.7",
-  "description": "JSVN Template engine for React",
+  "version": "1.0.0",
+  "description": "React render for JSVN Template engine",
   "author": "Artem Varshavin",
   "license": "MIT",
   "keywords": [
     "react",
-    "templates",
+    "es6",
+    "template",
     "view",
     "jsvn"
   ],
-  "main": "react-jsvn.lib.js",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production babel src/index.mjs -o react-jsvn.lib.js"
+    "build": "cross-env NODE_ENV=production babel ./src --out-dir ./lib"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,9 @@
     "cross-env": "^7.0.2"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "jsvn": "^0.5.1",
-    "react": "^17.0.1"
+    "core-js": "^3.6.5"
+  },
+  "peerDependencies": {
+    "react": "*"
   }
 }

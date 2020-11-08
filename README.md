@@ -1,10 +1,10 @@
 # REACT-JSVN
 
-JSVN (ES6) Template engine for React.
+React render for JSVN (ES6) template engine.
 
 ####UIBase.js
 ```
-import $$ from 'react-jsvn';
+import $$ from 'jsvn';
 
 //View
 const UIBase = new $$.View({
@@ -23,7 +23,7 @@ export default UIBase;
 
 ####Button.js
 ```
-import $$ from 'react-jsvn';
+import $$ from 'jsvn';
 import UIBase from './UIBase.js';
 
 //View that extends UIBase and <button> tag
@@ -46,7 +46,7 @@ export default Button;
 
 ####Input.js
 ```
-import $$ from 'react-jsvn';
+import $$ from 'jsvn';
 import UIBase from './UIBase.js';
 
 const Input = new $$.View(['/input', UIBase], { //Prefix '/' indicates a self-closing tag
@@ -59,7 +59,8 @@ export default Input;
 
 ####ListComponent.js
 ```
-import $$ from 'react-jsvn';
+import render from 'react-jsvn';
+import $$, { importCSS } from 'jsvn';
 import { useMemo } from 'react';
 import Button from './Button.js';
 
@@ -103,8 +104,9 @@ const List = props => {
 			},
 		}
 	}), []);
+    useMemo(()=>importCSS(view), [view]);
 
-	return view.render(props);
+	return render(view, props);
 };
 
 export default List;
@@ -112,7 +114,8 @@ export default List;
 
 ####main.js
 ```
-import $$ from 'react-jsvn';
+import render from 'react-jsvn';
+import $$, { importCSS } from 'jsvn';
 import React, { useMemo, useState } from 'react';
 import Input from './Input.js';
 import Button from './Button.js';
@@ -194,7 +197,9 @@ const RootComponent = () => {
 
 		background: '#eee',
 	}), []);
-	return view.render({...ctrl, items, setItems, newName, setNewName});
+    useMemo(()=>importCSS(view), [view]);
+
+	return render(view, {...ctrl, items, setItems, newName, setNewName});
 };
 
 ReactDOM.render(

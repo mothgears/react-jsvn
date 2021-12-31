@@ -1,8 +1,10 @@
 import React from 'react';
-import createReactRender from "./createReactRender";
+import ReactDOM from 'react-dom';
+import ReactDOMServer from 'react-dom/server';
+import createReactRender from './createReactRender';
 
-const render = createReactRender(React);
+export const reactRender = createReactRender(React, ReactDOM, ReactDOMServer);
 
 export default (view, ...envs) => {
-	return view.render(render, ...envs);
+	return view.render(reactRender, ...envs);
 }

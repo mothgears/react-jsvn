@@ -7,27 +7,51 @@ https://www.npmjs.com/package/jsvn
 
 #### Example
 ```
-import render             from 'react-jsvn';
-import $$, { importCSS }  from 'jsvn';
-import React, { useMemo } from 'react';
-import ReactDOM           from 'react-dom';
+import $$, { View }        from 'jsvn';
+import render              from 'react-jsvn';
+import React, { useState } from 'react';
+import ReactDOM            from 'react-dom';
 
-const MyComponent = () => {
-    const view = useMemo(()=>new $$.View({
-        width      : '100%',
-        height     : '30px',
-        background : '#eee',
+//Simple View
+const MyView = new View({
+	//CSS (static) Styles
+	background : '#eee',
+	width      : '200px',
+	textAlign  : 'center',
 
-        [$$.text]: it=>it.textValue
-    }), []);
-    useMemo(()=>importCSS(view), [view]);
+	//Child nodes
+	[$$('/input')]: { //Node base on "<input/>" tag
+		__bind: [env=>env.myText, env=>env.setMyText],
+	},
 
-    return render(view, {textValue: 'Hello World!'});
+	[$$()]: { //Node based on "<div></div>" tag (base by default, equal to "[$$('<>div')]")
+		__IF: env=>env.myText,              //Condition for rendering
+
+		[$$()]: 'Hello ',                   //Text node
+
+		[$$('<>span')]: {                   //Node based on "<span></span>" tag
+
+			color      : env=>env.myColor,  //Inline (dynamic) style
+			fontWeight : 'bold',            //CSS (static) style
+
+			[$$()]: env=>`${env.myText}!`, //Text node with dynamic text
+		},
+	},
+});
+
+//Simple React Component
+const MyComponent = props => {
+	const [ myText, setMyText ] = useState('world');
+
+	return render(MyView, { ...props, myText, setMyText });
 };
 
+//Render to root
 ReactDOM.render(
-    React.createElement(MyComponent, {}),
-    document.getElementById('root')
+	React.createElement(MyComponent, {
+		myColor : '#090',
+	}),
+	document.getElementById('root'),
 );
 ```
 

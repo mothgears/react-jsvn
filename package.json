@@ -1,13 +1,14 @@
 {
   "name": "react-jsvn",
-  "version": "1.3.4",
-  "description": "React render for JSVN Template engine",
+  "version": "1.3.5",
+  "description": "React render for JSVN",
   "author": "Artem Varshavin",
   "license": "MIT",
   "keywords": [
     "react",
     "es6",
     "template",
+    "styles",
     "view",
     "jsvn"
   ],
@@ -23,12 +24,11 @@
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
-    "babel-plugin-add-module-exports": "^1.0.4",
     "cross-env": "^7.0.2"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "html-react-parser": "^1.4.4"
+    "html-react-parser": "^1.4.6"
   },
   "peerDependencies": {
     "react": "*",

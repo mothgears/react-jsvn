@@ -1,6 +1,6 @@
 # REACT-JSVN
 
-React render for JSVN.
+React render for JSVN - ES2020 JSX alternative with class inheritance
 
 #### JSVN
 https://www.npmjs.com/package/jsvn
@@ -14,27 +14,30 @@ import ReactDOM            from 'react-dom';
 
 //Simple View
 const MyView = new View({
-	//CSS (static) Styles
 	background : '#eee',
 	width      : '200px',
 	textAlign  : 'center',
+	color      : m=>m.myColor,
 
-	//Child nodes
-	[$$('/input')]: { //Node base on "<input/>" tag
-		__bind: [env=>env.myText, env=>env.setMyText],
+	[$$`my-title`]: {
+		$: 'JSVN Example',
 	},
 
-	[$$()]: { //Node based on "<div></div>" tag (base by default, equal to "[$$('<>div')]")
-		__IF: env=>env.myText,              //Condition for rendering
+	[$$`my-input `('/input')]: {
+		_bind: [m=>m.myText, m=>m.setMyText],
+	},
 
-		[$$()]: 'Hello ',                   //Text node
+	[$$()]: {
+		_IF: m=>m.myText,
+		
+		fontFamily: 'Tahoma, sans-serif',
 
-		[$$('<>span')]: {                   //Node based on "<span></span>" tag
+		[$$()]: 'Hello ',
 
-			color      : env=>env.myColor,  //Inline (dynamic) style
-			fontWeight : 'bold',            //CSS (static) style
+		[$$('<>span')]: {
+			fontWeight : 'bold',
 
-			[$$()]: env=>`${env.myText}!`, //Text node with dynamic text
+			$: m=>`${m.myText}!`,
 		},
 	},
 });

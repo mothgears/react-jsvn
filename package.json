@@ -1,6 +1,6 @@
 {
   "name": "react-jsvn",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "description": "React render for JSVN",
   "author": "Artem Varshavin",
   "license": "MIT",
@@ -12,10 +12,12 @@
     "view",
     "jsvn"
   ],
-  "main": "lib/index.js",
+  "type": "module",
+  "browser": "lib/index.js",
+  "main": "src/index.js",
   "scripts": {
-    "prepublishOnly": "cross-env NODE_ENV=production babel ./src --out-dir ./lib",
-    "build": "cross-env NODE_ENV=production babel ./src --out-dir ./lib"
+    "prepublishOnly": "babel ./src --out-dir ./lib",
+    "build": "babel ./src --out-dir ./lib"
   },
   "repository": {
     "type": "git",

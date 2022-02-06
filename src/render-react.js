@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
-import createReactRender from './createReactRender';
+import createReactRender from './createReactRender.js';
 
 export const reactRender = createReactRender(React, ReactDOM, ReactDOMServer);
 

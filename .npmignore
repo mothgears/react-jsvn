@@ -3,3 +3,5 @@
 .npmignore
 /node_modules
 yarn-error.log
+/babel.config.json
+/tools

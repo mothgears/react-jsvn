@@ -1,62 +1,16 @@
 # REACT-JSVN
 
-React render for JSVN - ES2020 JSX alternative with class inheritance
+React render for JSVN - ESNext JSX alternative with class inheritance
 
 #### JSVN
 https://www.npmjs.com/package/jsvn
 
-#### Example
-```
-import $$, { View }        from 'jsvn';
-import render              from 'react-jsvn';
-import React, { useState } from 'react';
-import ReactDOM            from 'react-dom';
+#### Documentation and examples
+https://jsvn.dev
 
-//Simple View
-const MyView = new View({
-	background : '#eee',
-	width      : '200px',
-	textAlign  : 'center',
-	color      : m=>m.myColor,
-
-	[$$`my-title`]: {
-		$: 'JSVN Example',
-	},
-
-	[$$`my-input `('/input')]: {
-		_bind: [m=>m.myText, m=>m.setMyText],
-	},
-
-	[$$()]: {
-		_IF: m=>m.myText,
-		
-		fontFamily: 'Tahoma, sans-serif',
-
-		[$$()]: 'Hello ',
-
-		[$$('<>span')]: {
-			fontWeight : 'bold',
-
-			$: m=>`${m.myText}!`,
-		},
-	},
-});
-
-//Simple React Component
-const MyComponent = props => {
-	const [ myText, setMyText ] = useState('world');
-
-	return render(MyView, { ...props, myText, setMyText });
-};
-
-//Render to root
-ReactDOM.render(
-	React.createElement(MyComponent, {
-		myColor : '#090',
-	}),
-	document.getElementById('root'),
-);
-```
+#### Versions
+For `react@>=18` use `react-jsvn@2.x`  
+For `react@<18` use `react-jsvn@1.x`
 
 #### Installation
 npm

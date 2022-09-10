@@ -1,7 +1,10 @@
 .idea
 .gitignore
 .npmignore
+.browserslistrc
 /node_modules
 yarn-error.log
-/babel.config.json
-/tools
+yarn.lock
+test.mjs
+*.config.mjs
+*.config.json

@@ -2,7 +2,8 @@
   "presets": [
     ["@babel/env", {
       "useBuiltIns": "usage",
-      "corejs": { "version": "3.25", "proposals": true }
+      "corejs": { "version": "3.25", "proposals": true },
+      "modules": false
     }]
   ],
   "plugins": [

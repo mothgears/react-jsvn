@@ -1,6 +1,6 @@
 {
   "name": "react-jsvn",
-  "version": "1.3.8",
+  "version": "2.0.0",
   "description": "React render for JSVN",
   "author": "Artem Varshavin",
   "license": "MIT",
@@ -12,28 +12,35 @@
     "view",
     "jsvn"
   ],
-  "browser": "lib/index.js",
-  "main": "src/index.mjs",
+  "browser": "lib.browser.cjs",
+  "main": "lib.mjs",
+  "exports": {
+    "browser": {
+      "import": "./lib.browser.mjs",
+      "require": "./lib.browser.cjs"
+    },
+    "node": "./lib.mjs"
+  },
   "scripts": {
-    "prepublishOnly": "babel ./src --out-dir ./lib",
-    "build": "babel ./src --out-dir ./lib"
+    "prepublishOnly": "babel lib.mjs -o lib.browser.cjs && babel lib.mjs --config-file ./esm-babel.config.json -o lib.browser.mjs",
+    "transpile": "babel lib.mjs -o lib.browser.cjs && babel lib.mjs --config-file ./esm-babel.config.json -o lib.browser.mjs"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/mothgears/react-jsvn.git"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "cross-env": "^7.0.2"
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.0",
+    "@babel/preset-env": "^7.19.0",
+    "cross-env": "^7.0.3"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "html-react-parser": "^1.4.6"
+    "core-js": "^3.25.1",
+    "html-react-parser": "^3.0.4"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
   }
 }

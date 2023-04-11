@@ -1,6 +1,6 @@
 {
   "name": "react-jsvn",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "React render for JSVN",
   "author": "Artem Varshavin",
   "license": "MIT",
@@ -30,14 +30,14 @@
     "url": "https://github.com/mothgears/react-jsvn.git"
   },
   "devDependencies": {
-    "@babel/cli": "^7.18.10",
-    "@babel/core": "^7.19.0",
-    "@babel/preset-env": "^7.19.0",
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
     "cross-env": "^7.0.3"
   },
   "dependencies": {
-    "core-js": "^3.25.1",
-    "html-react-parser": "^3.0.4"
+    "core-js": "^3.30.0",
+    "html-react-parser": "^3.0.15"
   },
   "peerDependencies": {
     "react": ">=18.2.0",

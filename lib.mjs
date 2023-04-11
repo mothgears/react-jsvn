@@ -16,10 +16,11 @@ export const reactRender = {
 			if (child?.JSVNContainer) {
 				if (!child.renderEngine || child.renderEngine.lib === React) {
 					//React component
-					return React.createElement(child.component, child.props);
+					if (child.children) return React.createElement(child.component, child.props, ...child.children); //>= 0.11.13
+					else                return React.createElement(child.component, child.props); //<= 0.11.12
 				} else {
 					//Custom component
-					const { html, activate } = child.renderEngine.convert(child.component, child.props);
+					const { html, activate } = child.renderEngine.convert(child.component, child.props, child.children);
 					if (activate) activators.push(activate);
 					return htmlParser(html);
 				}
@@ -41,8 +42,10 @@ export const reactRender = {
 		return reactElement;
 	},
 
-	convert (component, props) {
-		const reactElement = React.createElement(component, props);
+	convert (component, props, children = null) {
+		const reactElement = children
+			? React.createElement(component, props, ...children)
+			: React.createElement(component, props);
 
 		return {
 			html     : ReactDOMServer.renderToString(reactElement),
